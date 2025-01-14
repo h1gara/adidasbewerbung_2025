@@ -3,15 +3,23 @@ import pandas as pd
 import plotly.express as px
 
 # App title
-st.set_page_config(page_title="Gara Hasan - Bewerbung für adidas", page_icon="👟")
+st.set_page_config(page_title="Gara Hasan - Bewerbung für adidas", page_icon="👟", layout="wide")
+
+# Adidas Logo
+st.image("https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg", width=200)
+
+# Title Section
 st.title("👋 Hallo adidas!")
-st.write("Mein Name ist Gara Hasan, und ich bewerbe mich für das Duale Studium in Data Science + KI bei adidas.")
+st.subheader("Interaktive Bewerbung für das Duale Studium in Data Science + KI")
 
 # Intro Section
 st.header("Warum bin ich der perfekte Kandidat?")
 st.write(
     "Mit meiner Erfahrung in Kundenbetreuung, Vertrieb und Projektmanagement - u.a. bei der EM 2024 in der Allianz Arena - bringe ich ein einzigartiges Skillset mit, das perfekt zu Ihrer Vision bei adidas passt."
 )
+
+# Persönliches Bild hinzufügen
+st.image("https://via.placeholder.com/500x300.png?text=Dein+Bild", caption="Gara Hasan auf Reisen", width=500)
 
 # Berufserfahrung visualisieren
 data = {
@@ -47,6 +55,10 @@ fig_analysis = px.bar(
 )
 st.plotly_chart(fig_analysis)
 
+# Weitere Bilder hinzufügen
+st.image("https://via.placeholder.com/500x300.png?text=Eventbild+1", caption="Gara bei der EM 2024")
+st.image("https://via.placeholder.com/500x300.png?text=Eventbild+2", caption="Teamwork bei Projekten")
+
 # Abschluss mit Quiz
 st.header("🤔 Quiz: Passt Gara Hasan zu adidas?")
 quiz_answer = st.radio(
@@ -56,6 +68,9 @@ quiz_answer = st.radio(
 if quiz_answer:
     st.success("Vielen Dank! Ich freue mich auf ein persönliches Gespräch.")
 
-# Footer
+# Footer with adidas style
 st.write("---")
-st.write("📧 Kontakt: gara867@gmail.com | 📞 +49 160 7795690")
+st.markdown(
+    "<div style='text-align: center;'>📧 Kontakt: <a href='mailto:gara867@gmail.com'>gara867@gmail.com</a> | 📞 +49 160 7795690</div>",
+    unsafe_allow_html=True
+)
